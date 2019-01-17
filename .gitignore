@@ -1,2 +1,4 @@
 #Ignore ws config files
 config.json
+archive.txt
+automl_errors*

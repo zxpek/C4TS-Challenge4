@@ -26,7 +26,7 @@ def init():
     global model
     global pca_transform
     
-    model_id = "AutoMLee562a66fbest"
+    model_id = "AutoMLabe634baabest"
     model_path = Model.get_model_path(model_name = model_id)
     # deserialize the model file back into a sklearn model
     model = joblib.load(model_path)
@@ -42,7 +42,7 @@ def run(rawdata):
         df.drop(['Machine_ID', 'District'], axis=1, inplace=True)
         df.drop('Failure_NextHour', axis = 1, inplace=True)
         df = df.apply(pd.to_numeric)
-        data = pca_transform.transform(scale(df))
+        data = pca_transform.transform(scale(df))[:,:10]
         result = model.predict(data)
     except Exception as e:
         result = str(e)
