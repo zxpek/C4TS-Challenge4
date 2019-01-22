@@ -9743,3 +9743,276 @@ KeyError: 'fitted_pipeline'
 2019-01-18 09:23:50,901 - INFO - 96 : ActivityStarted
 2019-01-18 09:23:51,010 - INFO - 116 : ActivityCompleted: HowEnded=Success, Duration=109.37 [ms]
 2019-01-18 09:23:51,010 - INFO - 588 : Run Complete.
+2019-01-18 09:25:54,000 - INFO - 126 : Starting usage telemetry collection
+2019-01-18 09:25:54,031 - INFO - 382 : Extracting user Data
+2019-01-18 09:25:54,031 - INFO - 417 : Start creating parent run with DTO:  - name: jmc-maintenance
+ - subscription_id: 50fb2758-5add-47ee-b8f2-9c9ae596fed5
+ - iterations: 3
+ - primary_metric: average_precision_score_weighted
+ - compute_target: local
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 10
+ - iteration_timeout_minutes: None
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: NOTSET
+ - send_telemetry: False
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize.
+2019-01-18 09:25:54,470 - INFO - 436 : [ParentRunID:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4] Local run using input X and y.
+2019-01-18 09:25:54,470 - INFO - 441 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4]SDK dependencies versions:{"azureml-widgets": "1.0.2", "azureml-train": "1.0.2", "azureml-train-restclients-hyperdrive": "1.0.2", "azureml-train-core": "1.0.2", "azureml-train-automl": "1.0.2", "azureml-telemetry": "1.0.2", "azureml-sdk": "1.0.2", "azureml-pipeline": "1.0.2", "azureml-pipeline-steps": "1.0.2", "azureml-pipeline-core": "1.0.2", "azureml-dataprep": "0.5.3", "azureml-dataprep-native": "11.1.2", "azureml-core": "1.0.2"}.
+2019-01-18 09:25:54,579 - INFO - 447 : Parent Run ID: AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4
+2019-01-18 09:25:54,579 - INFO - 898 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4]Input X datatype is <class 'numpy.ndarray'>, shape is (31499, 10), datasize is 112.
+2019-01-18 09:25:54,579 - INFO - 898 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4]Input y datatype is <class 'numpy.ndarray'>, shape is (31499,), datasize is 252088.
+2019-01-18 09:25:54,579 - INFO - 40 : Pre-processing user data
+2019-01-18 09:25:54,641 - INFO - 658 : [YCol]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "2", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"integer\"", "average_entry_length": "1.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "6.349407917711674e-05"}
+2019-01-18 09:25:54,954 - INFO - 658 : [XColNum:0]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31013", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "9", "column_type": "\"floating\"", "average_entry_length": "18.36664656020826", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845709387599606"}
+2019-01-18 09:25:55,268 - INFO - 658 : [XColNum:1]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31012", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "10", "column_type": "\"floating\"", "average_entry_length": "18.390742563255976", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845391917203721"}
+2019-01-18 09:25:55,581 - INFO - 658 : [XColNum:2]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31012", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "10", "column_type": "\"floating\"", "average_entry_length": "18.452871519730785", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845391917203721"}
+2019-01-18 09:25:55,909 - INFO - 658 : [XColNum:3]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31013", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "10", "column_type": "\"floating\"", "average_entry_length": "19.083367725959555", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845709387599606"}
+2019-01-18 09:25:56,222 - INFO - 658 : [XColNum:4]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31011", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "9", "column_type": "\"floating\"", "average_entry_length": "18.59563795676053", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845074446807835"}
+2019-01-18 09:25:56,552 - INFO - 658 : [XColNum:5]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31013", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "9", "column_type": "\"floating\"", "average_entry_length": "18.947077685005873", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845709387599606"}
+2019-01-18 09:25:56,864 - INFO - 658 : [XColNum:6]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31012", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "10", "column_type": "\"floating\"", "average_entry_length": "18.643004539826663", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845391917203721"}
+2019-01-18 09:25:57,193 - INFO - 658 : [XColNum:7]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31013", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "11", "column_type": "\"floating\"", "average_entry_length": "18.51706403377885", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845709387599606"}
+2019-01-18 09:25:57,521 - INFO - 658 : [XColNum:8]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31013", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "10", "column_type": "\"floating\"", "average_entry_length": "19.026477031016857", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845709387599606"}
+2019-01-18 09:25:57,850 - INFO - 658 : [XColNum:9]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "31012", "total_number_vals": "31499", "lengths": "{}", "num_unique_lens": "9", "column_type": "\"floating\"", "average_entry_length": "18.92177529445379", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9845391917203721"}
+2019-01-18 09:25:57,850 - INFO - 107 : No preprocessing of data to be done here
+2019-01-18 09:25:57,850 - INFO - 362 : Creating cross validations
+2019-01-18 09:25:57,850 - INFO - 376 : Found cross validation type: KFoldCrossValitionSplit
+2019-01-18 09:25:58,194 - INFO - 552 : Start local loop.
+2019-01-18 09:25:58,194 - INFO - 555 : Start iteration: 0
+2019-01-18 09:25:58,194 - INFO - 595 : Querying Jasmine for next pipeline.
+2019-01-18 09:25:58,883 - INFO - 610 : Received pipeline: {"pipeline_id": "e100bced3cd60474c905422a9e601209e77244c5", "objects": [{"prepared_kwargs": {}, "spec_class": "preproc", "param_kwargs": {"with_scaling": false, "quantile_range": [25, 75], "with_centering": true}, "class_name": "RobustScaler", "param_args": [], "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "spec_class": "sklearn", "param_kwargs": {"class_weight": "balanced", "min_samples_leaf": 0.1131578947368421, "oob_score": false, "criterion": "gini", "min_samples_split": 0.6189473684210526, "n_estimators": 400, "max_features": 0.2, "bootstrap": false}, "class_name": "RandomForestClassifier", "param_args": [], "module": "sklearn.ensemble"}]}
+2019-01-18 09:25:59,087 - WARNING - 102 : psutil not found, skipping logging cpu and memory
+2019-01-18 09:25:59,087 - INFO - 105 : [RunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_0]Platform information: Windows-10-10.0.14393-SP0.
+2019-01-18 09:25:59,087 - INFO - 330 : None
+2019-01-18 09:25:59,087 - INFO - 367 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_0] X datatype is <class 'numpy.ndarray'>, shape is (31499, 10), datasize is 112.
+2019-01-18 09:25:59,087 - INFO - 372 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_0] y datatype is <class 'numpy.ndarray'>, shape is (31499,), datasize is 252088.
+2019-01-18 09:25:59,087 - INFO - 392 : Created child run AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_0
+2019-01-18 09:25:59,087 - INFO - 491 : Start executing pipeline {"pipeline_id": "e100bced3cd60474c905422a9e601209e77244c5", "objects": [{"prepared_kwargs": {}, "spec_class": "preproc", "param_kwargs": {"with_scaling": false, "quantile_range": [25, 75], "with_centering": true}, "class_name": "RobustScaler", "param_args": [], "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "spec_class": "sklearn", "param_kwargs": {"class_weight": "balanced", "min_samples_leaf": 0.1131578947368421, "oob_score": false, "criterion": "gini", "min_samples_split": 0.6189473684210526, "n_estimators": 400, "max_features": 0.2, "bootstrap": false}, "class_name": "RandomForestClassifier", "param_args": [], "module": "sklearn.ensemble"}]}.
+2019-01-18 09:25:59,087 - INFO - 494 : Running with the following AutoML settings:
+ - name: jmc-maintenance
+ - subscription_id: 50fb2758-5add-47ee-b8f2-9c9ae596fed5
+ - iterations: 3
+ - primary_metric: average_precision_score_weighted
+ - compute_target: local
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 10
+ - iteration_timeout_minutes: None
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: NOTSET
+ - send_telemetry: False
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-01-18 09:26:04,110 - INFO - 72 : memory usage 335,624 K
+2019-01-18 09:26:04,110 - INFO - 83 : cpu time 0:00:42
+2019-01-18 09:26:14,189 - INFO - 72 : memory usage 336,384 K
+2019-01-18 09:26:14,189 - INFO - 83 : cpu time 0:00:52
+2019-01-18 09:26:24,283 - INFO - 72 : memory usage 336,316 K
+2019-01-18 09:26:24,283 - INFO - 83 : cpu time 0:01:02
+2019-01-18 09:26:34,394 - INFO - 72 : memory usage 335,332 K
+2019-01-18 09:26:34,394 - INFO - 83 : cpu time 0:01:13
+2019-01-18 09:26:44,050 - INFO - 665 : Pipeline execution finished with a score of 0.6677290780817005
+2019-01-18 09:26:44,050 - INFO - 696 : Start logging metrics for child run.
+2019-01-18 09:26:44,474 - INFO - 72 : memory usage 332,748 K
+2019-01-18 09:26:44,474 - INFO - 83 : cpu time 0:01:24
+2019-01-18 09:26:44,646 - WARNING - 1288 : Did not recognize metric: train time. Will not log.
+2019-01-18 09:26:44,646 - INFO - 1270 : The following metrics have been logged for the child run: {'confusion_matrix': <class 'dict'>, 'recall_score_weighted': 0.6636957599154891, 'recall_score_macro': 0.6588990081029398, 'accuracy': 0.6636957599154891, 'weighted_accuracy': 0.5561254654500376, 'accuracy_table': <class 'dict'>, 'average_precision_score_macro': 0.6677290780817005, 'norm_macro_recall': 0.31779801620587933, 'balanced_accuracy': 0.6588990081029398, 'AUC_weighted': 0.6908881500889648, 'f1_score_macro': 0.6568194465075224, 'recall_score_micro': 0.6636957599154891, 'precision_score_weighted': 0.6675787073547561, 'f1_score_weighted': 0.658955856162106, 'AUC_macro': 0.6908881500889648, 'f1_score_micro': 0.6636957599154891, 'log_loss': 0.643849368015134, 'average_precision_score_weighted': 0.6677290780817005, 'precision_score_macro': 0.668218523459861, 'average_precision_score_micro': 0.6677290780817005, 'precision_score_micro': 0.6636957599154891, 'AUC_micro': 0.6908881500889648, 'train time': <class 'float'>}.
+2019-01-18 09:26:46,872 - INFO - 555 : Start iteration: 1
+2019-01-18 09:26:46,872 - INFO - 595 : Querying Jasmine for next pipeline.
+2019-01-18 09:26:47,608 - INFO - 610 : Received pipeline: {"objects": [{"prepared_kwargs": {}, "param_kwargs": {}, "class_name": "MaxAbsScaler", "spec_class": "preproc", "param_args": [], "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "param_kwargs": {"min_data_in_leaf": 0.017249655172413794, "num_leaves": 119, "learning_rate": 0.06842421052631578, "reg_alpha": 0.8421052631578947, "max_depth": 10, "colsample_bytree": 0.1988888888888889, "min_split_gain": 1, "reg_lambda": 0.21052631578947367, "max_bin": 130, "min_child_weight": 4, "n_estimators": 25, "boosting_type": "gbdt", "subsample": 0.8910526315789474}, "class_name": "LightGBMClassifier", "spec_class": "sklearn", "param_args": [], "module": "automl.client.core.common.model_wrappers"}], "pipeline_id": "7a180470d25072d77c0e4488e70b2eb5bb959acc"}
+2019-01-18 09:26:47,843 - WARNING - 102 : psutil not found, skipping logging cpu and memory
+2019-01-18 09:26:47,843 - INFO - 105 : [RunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_1]Platform information: Windows-10-10.0.14393-SP0.
+2019-01-18 09:26:47,843 - INFO - 330 : None
+2019-01-18 09:26:47,843 - INFO - 367 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_1] X datatype is <class 'numpy.ndarray'>, shape is (31499, 10), datasize is 112.
+2019-01-18 09:26:47,843 - INFO - 372 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_1] y datatype is <class 'numpy.ndarray'>, shape is (31499,), datasize is 252088.
+2019-01-18 09:26:47,843 - INFO - 392 : Created child run AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_1
+2019-01-18 09:26:47,843 - INFO - 491 : Start executing pipeline {"objects": [{"prepared_kwargs": {}, "param_kwargs": {}, "class_name": "MaxAbsScaler", "spec_class": "preproc", "param_args": [], "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "param_kwargs": {"min_data_in_leaf": 0.017249655172413794, "num_leaves": 119, "learning_rate": 0.06842421052631578, "reg_alpha": 0.8421052631578947, "max_depth": 10, "colsample_bytree": 0.1988888888888889, "min_split_gain": 1, "reg_lambda": 0.21052631578947367, "max_bin": 130, "min_child_weight": 4, "n_estimators": 25, "boosting_type": "gbdt", "subsample": 0.8910526315789474}, "class_name": "LightGBMClassifier", "spec_class": "sklearn", "param_args": [], "module": "automl.client.core.common.model_wrappers"}], "pipeline_id": "7a180470d25072d77c0e4488e70b2eb5bb959acc"}.
+2019-01-18 09:26:47,843 - INFO - 494 : Running with the following AutoML settings:
+ - name: jmc-maintenance
+ - subscription_id: 50fb2758-5add-47ee-b8f2-9c9ae596fed5
+ - iterations: 3
+ - primary_metric: average_precision_score_weighted
+ - compute_target: local
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 10
+ - iteration_timeout_minutes: None
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: NOTSET
+ - send_telemetry: False
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-01-18 09:26:49,455 - INFO - 665 : Pipeline execution finished with a score of 0.6866455305442238
+2019-01-18 09:26:49,455 - INFO - 696 : Start logging metrics for child run.
+2019-01-18 09:26:49,877 - WARNING - 1288 : Did not recognize metric: train time. Will not log.
+2019-01-18 09:26:49,893 - INFO - 1270 : The following metrics have been logged for the child run: {'confusion_matrix': <class 'dict'>, 'recall_score_weighted': 0.47872833545861476, 'recall_score_macro': 0.5, 'accuracy': 0.47872833545861476, 'weighted_accuracy': 0.9546177460643893, 'accuracy_table': <class 'dict'>, 'average_precision_score_macro': 0.6866455305442238, 'norm_macro_recall': 0.0, 'balanced_accuracy': 0.5, 'AUC_weighted': 0.7083215536043678, 'f1_score_macro': 0.32371811648880894, 'recall_score_micro': 0.47872833545861476, 'precision_score_weighted': 0.22926234221876984, 'f1_score_weighted': 0.3100204379396116, 'AUC_macro': 0.7083215536043678, 'f1_score_micro': 0.47872833545861476, 'log_loss': 0.9255427329864888, 'average_precision_score_weighted': 0.6866455305442238, 'precision_score_macro': 0.23936416772930738, 'average_precision_score_micro': 0.6866455305442238, 'precision_score_micro': 0.47872833545861476, 'AUC_micro': 0.7083215536043678, 'train time': <class 'float'>}.
+2019-01-18 09:26:51,943 - INFO - 555 : Start iteration: 2
+2019-01-18 09:26:51,943 - INFO - 595 : Querying Jasmine for next pipeline.
+2019-01-18 09:26:52,319 - INFO - 610 : Received pipeline: {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'jmc-maintenance', 'path': '.', 'subscription_id': '50fb2758-5add-47ee-b8f2-9c9ae596fed5', 'resource_group': 'pekamlws-sea', 'workspace_name': 'pekamlws', 'iterations': 3, 'primary_metric': 'average_precision_score_weighted', 'data_script': None, 'compute_target': 'local', 'task_type': 'classification', 'validation_size': 0.0, 'n_cross_validations': 5, 'y_min': None, 'y_max': None, 'num_classes': 2, 'preprocess': False, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 1, 'max_concurrent_iterations': 10, 'iteration_timeout_minutes': None, 'mem_in_mb': None, 'enforce_time_on_windows': True, 'experiment_timeout_minutes': None, 'experiment_exit_score': None, 'whitelist_models': None, 'blacklist_algos': ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automl_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'NOTSET', 'send_telemetry': False, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 3, 'enable_tf': True, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2","experiment_name":"jmc-maintenance","workspace_name":"pekamlws","subscription_id":"50fb2758-5add-47ee-b8f2-9c9ae596fed5","resource_group_name":"pekamlws-sea"}}]}
+2019-01-18 09:26:52,539 - WARNING - 102 : psutil not found, skipping logging cpu and memory
+2019-01-18 09:26:52,539 - INFO - 105 : [RunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2]Platform information: Windows-10-10.0.14393-SP0.
+2019-01-18 09:26:52,539 - INFO - 330 : None
+2019-01-18 09:26:52,539 - INFO - 367 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2] X datatype is <class 'numpy.ndarray'>, shape is (31499, 10), datasize is 112.
+2019-01-18 09:26:52,539 - INFO - 372 : [ParentRunId:AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2] y datatype is <class 'numpy.ndarray'>, shape is (31499,), datasize is 252088.
+2019-01-18 09:26:52,539 - INFO - 392 : Created child run AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2
+2019-01-18 09:26:52,539 - INFO - 491 : Start executing pipeline {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'jmc-maintenance', 'path': '.', 'subscription_id': '50fb2758-5add-47ee-b8f2-9c9ae596fed5', 'resource_group': 'pekamlws-sea', 'workspace_name': 'pekamlws', 'iterations': 3, 'primary_metric': 'average_precision_score_weighted', 'data_script': None, 'compute_target': 'local', 'task_type': 'classification', 'validation_size': 0.0, 'n_cross_validations': 5, 'y_min': None, 'y_max': None, 'num_classes': 2, 'preprocess': False, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 1, 'max_concurrent_iterations': 10, 'iteration_timeout_minutes': None, 'mem_in_mb': None, 'enforce_time_on_windows': True, 'experiment_timeout_minutes': None, 'experiment_exit_score': None, 'whitelist_models': None, 'blacklist_algos': ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automl_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'NOTSET', 'send_telemetry': False, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 3, 'enable_tf': True, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_682e01c5-d55f-4d45-8158-5db7c7a927c4_2","experiment_name":"jmc-maintenance","workspace_name":"pekamlws","subscription_id":"50fb2758-5add-47ee-b8f2-9c9ae596fed5","resource_group_name":"pekamlws-sea"}}]}.
+2019-01-18 09:26:52,539 - INFO - 494 : Running with the following AutoML settings:
+ - name: jmc-maintenance
+ - subscription_id: 50fb2758-5add-47ee-b8f2-9c9ae596fed5
+ - iterations: 3
+ - primary_metric: average_precision_score_weighted
+ - compute_target: local
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 10
+ - iteration_timeout_minutes: None
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: NOTSET
+ - send_telemetry: False
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-01-18 09:26:54,583 - INFO - 72 : memory usage 337,296 K
+2019-01-18 09:26:54,583 - INFO - 83 : cpu time 0:01:31
+2019-01-18 09:26:54,770 - INFO - 222 : Fetching fitted models for best 2 previous iterations
+2019-01-18 09:26:55,427 - INFO - 125 : Fetched the fitted pipelines in 2 seconds
+2019-01-18 09:26:56,461 - INFO - 107 : Single models scores: [0.68664553 0.66772908]
+2019-01-18 09:26:56,476 - INFO - 146 : Starting ensemble hill climbing. Current ensemble: [0], current score: 0.6866455305442238
+2019-01-18 09:26:56,508 - INFO - 178 : Iteration 0, new best ensemble: [0, 0], new best score :0.6866455305442238
+2019-01-18 09:26:56,539 - INFO - 178 : Iteration 1, new best ensemble: [0, 0, 1], new best score :0.6873149374473982
+2019-01-18 09:26:56,539 - INFO - 182 : Final ensemble: [0, 0, 1], score: 0.6873149374473982. Best individual model score: 0.6866455305442238
+2019-01-18 09:26:56,539 - INFO - 191 : Unique models IDs in the ensemble: [0, 1]. Weights: [0.6666666666666666, 0.3333333333333333]
+2019-01-18 09:26:56,539 - INFO - 137 : Selected the pipelines for the ensemble in 1 seconds
+2019-01-18 09:26:57,384 - INFO - 306 : Ensembled iterations: [1, 0]. Ensembled algos: ['LightGBM', 'RandomForest']
+2019-01-18 09:26:58,714 - INFO - 665 : Pipeline execution finished with a score of 0.6873149374473982
+2019-01-18 09:26:58,714 - INFO - 696 : Start logging metrics for child run.
+2019-01-18 09:26:59,199 - WARNING - 1288 : Did not recognize metric: train time. Will not log.
+2019-01-18 09:26:59,215 - INFO - 1270 : The following metrics have been logged for the child run: {'confusion_matrix': <class 'dict'>, 'recall_score_weighted': 0.47872833545861476, 'recall_score_macro': 0.5, 'accuracy': 0.47872833545861476, 'weighted_accuracy': 0.9546177460643893, 'accuracy_table': <class 'dict'>, 'average_precision_score_macro': 0.6873149374473982, 'norm_macro_recall': 0.0, 'balanced_accuracy': 0.5, 'AUC_weighted': 0.7088129856626181, 'f1_score_macro': 0.32371811648880894, 'recall_score_micro': 0.47872833545861476, 'precision_score_weighted': 0.22926234221876984, 'f1_score_weighted': 0.3100204379396116, 'AUC_macro': 0.7088129856626181, 'f1_score_micro': 0.47872833545861476, 'log_loss': 0.7624495776057173, 'average_precision_score_weighted': 0.6873149374473982, 'precision_score_macro': 0.23936416772930738, 'average_precision_score_micro': 0.6873149374473982, 'precision_score_micro': 0.47872833545861476, 'AUC_micro': 0.7088129856626181, 'train time': <class 'float'>}.
+2019-01-18 09:27:00,905 - INFO - 96 : ActivityStarted
+2019-01-18 09:27:01,014 - INFO - 116 : ActivityCompleted: HowEnded=Success, Duration=109.37 [ms]
+2019-01-18 09:27:01,014 - INFO - 588 : Run Complete.
